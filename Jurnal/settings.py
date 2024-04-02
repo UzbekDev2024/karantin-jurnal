@@ -28,8 +28,9 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ["https://karantin-jurnali.uz", "karantin-jurnali.uz", "www.karantin-jurnali.uz"]
 
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -122,10 +123,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = ('/home/supermap/karantin-jurnali.uz/django/staticfiles',)
+STATIC_ROOT = '/home/supermap/karantin-jurnali.uz/django/static'
 MEDIA_URL = 'media/'
-MEDIA_ROOT = BASE_DIR / 'media'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+MEDIA_ROOT = '/home/supermap/karantin-jurnali.uz/django/media'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
