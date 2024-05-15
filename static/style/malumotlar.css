@@ -1,0 +1,84 @@
+.malumotlar{
+  width: 100%;
+  min-height: 500px;
+  border: solid white;
+}
+.malumotlar .container{
+  margin-top: 170px;
+}
+.imgcard{
+  width: 320px;
+  height: 630px;
+  padding: 2px 0px 2px 2px;
+  transition: 1s;
+}
+.imgs{
+  border-radius: 20px 0px 0px 20px;
+}
+.textcard{
+  width: 800px;
+  height: 630px;
+  border-radius: 0px 20px 20px 0px;
+  background-color:  var(--bs-border-color);
+}
+.textcard h4{
+  margin-top: 20px;
+  margin-left: 30px;
+}
+.textcard p{
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.yuklash{
+   margin-bottom: -100px;
+  margin-left: -10px;
+}
+.sana{
+  margin-top: 10px;
+  margin-left: 30px;
+  font-size: 17px;
+}
+.sana span:nth-of-type(2),span:nth-of-type(3),span:nth-of-type(4) , .fontW{
+  font-weight: 500;
+}
+.korganlar{
+  margin-top: 5px;
+  margin-left: 30px;
+}
+.kategoriya{
+  margin-top: 15px;
+  margin-left: 30px;
+  font-size: 17px;
+}
+.kategoriya span:nth-of-type(2){
+  font-weight: 500;
+}
+.icons{
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+.text{
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+@media screen and (max-width: 1200px) {
+  .imgs{
+    border-radius: 20px 20px 20px 20px;
+  }
+  .textcard{
+    width: 100%;
+    border-radius: 20px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .malumotlar .container{
+    transition: 0.5s;
+    margin-top: 100px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .textcard{
+    height: 335px;
+  }
+}

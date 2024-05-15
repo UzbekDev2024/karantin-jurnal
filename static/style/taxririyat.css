@@ -1,0 +1,46 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+.taxririyat{
+  width: 100%;
+  min-height: 500px;
+  border: solid white;
+}
+.taxririyat .container{
+  margin-top: 190px;
+}
+.bacground{
+  background-color: whitesmoke;
+}
+.fistBorder{
+  border-radius: 10px 0px 0px 10px;
+}
+.secondBorder{
+  border-radius: 0px 10px 10px 0px;
+}
+.fon{
+  font-family: "Brygada 1918", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+.fontWeight{
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+@media screen and (max-width: 1200px) {
+  .taxririyat .container{
+    transition: 0.5s;
+    margin-top: 120px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .fistBorder{
+    border-radius: 10px 10px 0px 0px;
+  }
+  .secondBorder{
+    border-radius:0px 0px 10px 10px;
+  }
+}

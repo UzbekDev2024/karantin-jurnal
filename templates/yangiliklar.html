@@ -4,31 +4,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
 
-      <link rel="shorcut icon" href="{% static 'imgs/globus.jpg' %}">
+    <link rel="shorcut icon" href="{% static 'imgs/globus.jpg' %}">
   <!-- title -->
   <title>karantin-jurnali</title>
   <!-- bootstrap -->
   <link rel="stylesheet" href="{% static 'style/bootstrap.css' %}">
   <!-- style -->
   <link rel="stylesheet" href="{% static 'style/style.css' %}">
-  <link rel="stylesheet" href="{% static 'style/dataline.css' %}">
+  <link rel="stylesheet" href="{% static 'style/yangiliklar.css' %}">
   <!-- fontAwsome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- fonts -->
   <link rel="stylesheet" href="{% static 'fonts/font.css' %}">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-
-<!-- fonts end -->
 </head>
 <body>
-  <!-- navbar -->
-  <header>
+    <!-- navbar -->
+    <div class="active-container">
+      <header>
 
       <nav class="navbar d-flex position-fixed w-100">
         <div class="container d-xl-flex d-none">
@@ -180,39 +174,75 @@
       </div>
         </nav>
 
-
-  </header>
-  <!-- navbar end -->
-  <!-- malumotlar -->
-  <div class="malumot">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-xl-8 col-11 border ">
-          <div class="card4 padding-1 font">
-            <p class="text-secondary mt-4">
-              <span><i class="fa-solid text-secondary fa-newspaper"></i></span>
-              {{yangilik_detel.chopetilishVaqti|date:'Y-m-d'}}
-            </p>
-            <h2 class="font-fammily">
-              {{yangilik_detel.nomi}}
-            </h2>
-            <img src="{{yangilik_detel.rasm.url}}" alt="">
+        </header>
+      <div class="container-1 position-relative bg-img ">
+        <div class="container-1a w-100 h-100 ">
+          <div class="container-2 position-absolute mt-5  w-100 h-100 d-flex justify-content-center align-items-center flex-column">
+            <h1 class="text-light text-center">Yangiliklar</h1>
           </div>
-          <p class="mt-3 fs-5 padding-1 font-fammily-1">
-          {{yangilik_detel.text}}
-          </p>
-          
         </div>
-      </div> 
-    </div> 
-  </div>
-  </div>
-  <!-- malummotlar end -->
-  <!-- futter -->
+      </div>
+    </div>
+    <!-- navabr-end -->
+    <!-- jurnallar -->
+    <div class="jurnallar mt-5">
+      <div class="container">
+        <a class="text-decoration-none" href="{% url 'yangilik_detel' mainNew.id  %}">
+          <div class="row justify-content-xl-between justify-content-center ">
+            <div class="col-xl-6 col-md-9 col-11   d-flex justify-content-center border-radius-1">
+              <img class="border-radius-1 w-100" src="{{mainNew.rasm.url}}" alt="">
+            </div>
+            <div class="col-xl-6 col-md-9 col-11   mt-xl-0 mt-4 padding border-radius-1 bg-blue border-radius-2 ">
+              <p class="text-secondary offset-1 mt-5">
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="text-gray-500"
+                     height="20" width="20" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke-miterlimit="10" stroke-width="32" d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z"></path><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M256 128v144h96"></path></svg>
+
+                {{mainNew.chopetilishVaqti|date:'Y-m-d'}}
+              </p>
+              <h2 class="offset-1 mt-2 text-start text-black">
+              {{mainNew.nomi}}
+              </h2>
+              <p class="offset-1 mt-4 text-black">
+              {{mainNew.text|truncatewords:20}}
+              </p>
+            </div>
+          </div>
+        </a>
+        <!-- <a class="text-decoration-none" href="../dete elin/deteline.html"> -->
+          <div class="row mt-4 position-relative justify-content-xl-start justify-content-md-center justify-content-sm-center  justify-content-center gap-0">
+
+        {% for page in page_obj %}
+            <div class="col-xl-4 w91 col-md-8 col-11 d-flex mt-3">
+              <a class="text-decoration-none border border-radius-1" href="{% url 'yangilik_detel' page.id %}">
+                <div class="card w-100 h-100">
+                  <div class="imgCard w-100 border ">
+                    <img class="img-fluid" src="{{page.rasm.url}}" alt="">
+                  </div>
+                  <div class="titleCard">
+                    <div class="NewsCard">
+                      <p class="fontSize">
+                        <span class="text-secondary">{{page.chopetilishVaqti|date:'Y-m-d'}}</span>
+                      </p>
+                    </div>
+                    <div class="sarlavha">
+                      <h4 class="margin-left">{{page.nomi}}</h4>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+        {% endfor %}
+          </div>
+
+        <!-- </a> -->
+      </div>
+    </div>
+    <!-- jurnallar end -->
+    <!-- futter -->
     <div class="futter bg-dark mt-5">
       <div class="container">
         <div class="row justify-content-center mt-1">
-          <div class="col-xl-4 d-flex justify-content-center gap-4">
+          <div class="col-xl-4 col-11 d-flex justify-content-center gap-4">
             <a class="text-decoration-none" href="">
               <div class="card1 d-flex justify-content-center align-items-center">
                 <i class="fa-brands fs-3 text-black fa-instagram"></i>
@@ -236,19 +266,18 @@
             
           </div>
         </div>
-        <div class="row justify-content-center mt-3 ">
-          <div class="col-xl-5 col-md-9">
+        <div class="row justify-content-center mt-3 ">    
+          <div class="col-xl-5 col-11">
             <p class="text-light text-center font-size1">Biz ijtimoiy tarmoqlarda kuztib boring !</p>
             <p class="text-light text-center font-size">Uzbekistan 2024</p>
           </div>
         </div>
       </div>
     </div>
-  <!-- futter end -->
+    <!-- futter end -->
 </body>
 
 <script src="{% static 'javascript/bootstrap.bundle.min.js' %}"></script>
 <script src="{% static 'javascript/main.js' %}"></script>
-
 
 </html>

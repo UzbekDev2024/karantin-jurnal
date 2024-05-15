@@ -11,7 +11,7 @@ def asosiy(request):
         "jurnal": jurnal,
         "fayl_turi": turi
     }
-    return render(request, "landing page/index.html", context=context)
+    return render(request, "index.html", context=context)
 
 
 def jurnal_detel(request, id):
@@ -32,7 +32,7 @@ def yangilik_detel(request, id):
 
 class SearchResultList(ListView):
     model = Jurnallar
-    template_name = 'landing page/index.html'
+    template_name = 'index.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -58,7 +58,7 @@ def sinov_detel(request, id=id):
         "jurnal": n,
         "fayl_turi": turi
     }
-    return render(request, "landing page/index.html", context=context)
+    return render(request, "index.html", context=context)
 
 
 def jurnallar(request):
@@ -68,7 +68,7 @@ def jurnallar(request):
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
 
-    return render(request, "jurnallar/index.html", {"page_obj": page_obj})
+    return render(request, "jurnallar.html", {"page_obj": page_obj})
 
 
 def yangiliklar(request):
@@ -84,4 +84,15 @@ def yangiliklar(request):
         "mainNew": mainNew
     }
 
-    return render(request, "yangiliklar/yangiliklar.html", context)
+    return render(request, "yangiliklar.html", context)
+
+
+def talablarList(request):
+    talablar = Talablar.objects.all()
+
+    return render(request, 'talablar.html', context={"talablar": talablar })
+
+def taxririyatList(request):
+    taxririyat = Tahririyat.objects.all()
+
+    return render(request, 'taxririyat.html', context={"taxririyats": taxririyat})

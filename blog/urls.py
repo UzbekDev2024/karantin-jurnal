@@ -9,4 +9,6 @@ urlpatterns = [
     path('yangilik_detel/<int:id>/', yangilik_detel, name="yangilik_detel"),
     path('search/', SearchResultList.as_view(), name="search"),
     path('sinov_detel/<int:id>/', sinov_detel, name="sinov_detel"),
+    path('talablar/', talablarList, name="talablar_list"),
+    path('taxririyat/', taxririyatList, name="taxririyat_list"),
 ]

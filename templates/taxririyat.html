@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+<!--  <title>Document</title>-->
+  <!-- boostrap -->
 
       <link rel="shorcut icon" href="{% static 'imgs/globus.jpg' %}">
   <!-- title -->
@@ -13,18 +14,13 @@
   <link rel="stylesheet" href="{% static 'style/bootstrap.css' %}">
   <!-- style -->
   <link rel="stylesheet" href="{% static 'style/style.css' %}">
-  <link rel="stylesheet" href="{% static 'style/dataline.css' %}">
+  <link rel="stylesheet" href="{% static 'style/taxririyat.css' %}">
   <!-- fontAwsome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- fonts -->
   <link rel="stylesheet" href="{% static 'fonts/font.css' %}">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-
-<!-- fonts end -->
 </head>
 <body>
   <!-- navbar -->
@@ -179,35 +175,35 @@
         </div>
       </div>
         </nav>
-
-
-  </header>
+    </header>
   <!-- navbar end -->
-  <!-- malumotlar -->
-  <div class="malumot">
+  <!-- taxririyat  -->
+  <div class="taxririyat">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-xl-8 col-11 border ">
-          <div class="card4 padding-1 font">
-            <p class="text-secondary mt-4">
-              <span><i class="fa-solid text-secondary fa-newspaper"></i></span>
-              {{yangilik_detel.chopetilishVaqti|date:'Y-m-d'}}
-            </p>
-            <h2 class="font-fammily">
-              {{yangilik_detel.nomi}}
-            </h2>
-            <img src="{{yangilik_detel.rasm.url}}" alt="">
-          </div>
-          <p class="mt-3 fs-5 padding-1 font-fammily-1">
-          {{yangilik_detel.text}}
-          </p>
-          
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2>Tahrir hay`ati bo`limi a`zolari</h2>
         </div>
-      </div> 
-    </div> 
+      </div>
+      <div class="row justify-content-center mt-3">
+        {% for taxririyat in taxririyats %}
+        <div class="col-xl-3 col-md-4 col-11 text-center bacground fistBorder">
+          <h5 class="fontWeight mt-3">{{taxririyat.birinchiUstun}} </h5>
+<!--          <h5 class="fontWeight mt-3">yoldashev pirmat abror </h5>-->
+        </div>
+        <div class="col-xl-3 col-md-4 col-11 text-center bacground">
+          <h5 class="fontWeight mt-3">{{taxririyat.ikkinchiUstun}} </h5>
+<!--          <h5 class="fontWeight mt-2">yoldashev pirmat abror </h5>-->
+        </div>
+        <div class="col-xl-3 col-md-4 col-11 text-center bacground secondBorder">
+          <h5 class="fontWeight mt-3">{{taxririyat.uchinchiUstun}} </h5>
+<!--          <h5 class="fontWeight mt-2">yoldashev pirmat abror </h5>-->
+        </div>
+        {% endfor %}
+      </div>
+    </div>
   </div>
-  </div>
-  <!-- malummotlar end -->
+  <!-- taxririyat end -->
   <!-- futter -->
     <div class="futter bg-dark mt-5">
       <div class="container">
@@ -249,6 +245,5 @@
 
 <script src="{% static 'javascript/bootstrap.bundle.min.js' %}"></script>
 <script src="{% static 'javascript/main.js' %}"></script>
-
 
 </html>

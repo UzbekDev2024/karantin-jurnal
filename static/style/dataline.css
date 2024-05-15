@@ -1,0 +1,31 @@
+.font-fammily{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+.font-fammily-1{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+}
+.padding-1{
+  padding: 20px;
+}
+.font-fammily{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+.font-fammily-1{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+}
+.malumot{
+  width: 100%;
+  min-height: 500px;
+  border: solid white;
+}
+.malumot .container{
+  margin-top: 170px;
+}

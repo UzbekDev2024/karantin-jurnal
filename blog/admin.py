@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from blog.models import Jurnallar, Fayl_turi,Yangiliklar
+from blog.models import Jurnallar, Fayl_turi,Yangiliklar, Tahririyat, Talablar
 
 
 # Register your models here.
@@ -28,3 +28,6 @@ class YangiliklarAdmin(admin.ModelAdmin):
     search_fields = ['nomi', 'Text']
     date_hierarchy = 'chopetilishVaqti'
     ordering = ['holati', 'chopetilishVaqti']
+
+admin.site.register(Tahririyat)
+admin.site.register(Talablar)

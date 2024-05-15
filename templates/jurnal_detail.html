@@ -4,36 +4,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Karantin-jurnali</title>
-  <!-- boostrap -->
+  <title>Document</title>
+  <link rel="shorcut icon" href="{% static 'imgs/globus.jpg' %}">
+  <!-- title -->
+  <title>karantin-jurnali</title>
+  <!-- bootstrap -->
   <link rel="stylesheet" href="{% static 'style/bootstrap.css' %}">
   <!-- style -->
-  <link rel="stylesheet" href="{% static 'malumotlar/malumotlar.css' %}">
-    <!-- font-awsome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- fonts -->
-    <link rel="stylesheet" href="{% static 'fonts/font.css' %}">
+  <link rel="stylesheet" href="{% static 'style/style.css' %}">
+  <link rel="stylesheet" href="{% static 'style/malumotlar.css' %}">
+  <!-- fontAwsome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- fonts -->
+  <link rel="stylesheet" href="{% static 'fonts/font.css' %}">
+
+
 </head>
 <body>
-  <div class="active-container ">
-<!--    <header>-->
-    <nav class="navbar d-flex position-fixed w-100">
-      <div class="container">
-        <a style="text-decoration:none" href="{% url 'asosiy' %}">
-          <h4 class="text-light">Elektron <br> Jurnal</h4>
-            </a>
-        <div class="row w-1 d-xl-flex d-none  justify-content-end">
-          <div class="col-5 d-flex justify-content-between">
-            <a class="text-decoration-none text-light " href="{% url 'asosiy' %}">Bosh sahifa</a>
-            <a class="text-decoration-none text-secondary " href="{% url 'jurnallar' %}">Jurnallar</a>
-            <a class="text-decoration-none text-secondary " href="{% url 'yangiliklar' %}">Yangiliklar</a>
+  <!-- navbar -->
+  <header>
+
+      <nav class="navbar d-flex position-fixed w-100">
+        <div class="container d-xl-flex d-none">
+          <div class="row w-100 navbarHeight justify-content-between">
+            <div class="col-2 ">
+              <h4 class="text-light">Elektron <br> Jurnal</h4>
+            </div>
+            <div class="col-7   d-flex align-items-center justify-content-around gap-2">
+              <span class="d-flex gap-5 align-items-center">
+                <a target="_blank" class="text-light text-decoration-none  mt-2" href="">
+                  <p class="gap-3"><span><i class="fa-solid fa-phone"></i></span>+998 90 353-37-77</p></a>
+                <a target="_blank" class="text-light text-decoration-none mt-2" href="#">
+                  <p><span><i class="fa-solid fa-phone"></i></span>+998 90 946-22-42</p>
+                </a>
+              </span>
+              <span>
+                <div class="icons d-flex gap-4">
+                  <a target="_blank" href="https://www.facebook.com/profile.php?id=100083391671026"><div class="icon">
+                    <i class="fa-brands fs-5 fa-facebook"></i></div>
+                  </a>
+                  <a target="_blank" href=""><div class="icon"><i class="fa-brands fs-5  fa-youtube"></i></div></a>
+                  <a target="_blank" href=""><div class="icon"><i class="fa-brands fs-5  fa-instagram"></i></i></div></a>
+                  <a target="_blank" href="https://t.me/karantinjurnal"><div class="icon"><i class="fa-brands fs-5 fa-telegram"></i></div></a>
+                </div>
+              </span>
+              <div class="icon">
+                <a href="{% url 'admin:index' %}"><i class="fa-regular fa-eye text-secondary fs-5"></i></a>
+              </div>
+            </div>
+            <div class="col-3  d-flex align-items-center justify-content-end">
+              <button class="navbarButton">
+                Ro'yhatdan o'tish
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-line d-xl-flex d-none"></div>
+      <div class="container ">
+        <div class="row d-xl-none d-md-flex d-none navbarWidht justify-content-between">
+          <div class="col-md-4 col-sm-4">
+            <h4 class="text-light offset-1">Elektron <br> Jurnal</h4>
+          </div>
+          <div class="col-md-5  d-flex align-items-center justify-content-center gap-5">
+            <div class="icons d-flex gap-4">
+              <a target="_blank" href="https://www.facebook.com/profile.php?id=100083391671026">
+                <div class="icon"><i class="fa-brands fs-5 fa-facebook"></i></div></a>
+              <a target="_blank" href=""><div class="icon"><i class="fa-brands fs-5  fa-youtube"></i></div></a>
+              <a target="_blank" href=""><div class="icon"><i class="fa-brands fs-5  fa-instagram"></i></i></div></a>
+              <a target="_blank" href="https://t.me/karantinjurnal"><div class="icon"><i class="fa-brands fs-5 fa-telegram"></i></div></a>
+            </div>
+            <div class="icon">
+              <a href="{% url 'admin:index' %}"><i class="fa-regular fa-eye text-secondary fs-5"></i></a>
+            </div>
+          </div>
+          <div class=" col-md-3 col-sm-4    align-items-center d-flex justify-content-center">
+            <button class="navbarButton">
+              Ro'yhatdan o'tish
+            </button>
+          </div>
+        </div>
+        <div class="row navbarWidht d-xl-none d-md-none d-flex">
+          <div class="col-5 ">
+            <h4 class="text-light offset-1">Elektron <br> Jurnal</h4>
+          </div>
+          <div class="col-7 d-flex align-items-center gap-3">
+            <div class="icons d-flex gap-4 ">
+              <a target="_blank" href="https://www.facebook.com/profile.php?id=100083391671026">
+                <div class="icon"><i class="fa-brands fs-5 fa-facebook"></i></div></a>
+              <a target="_blank" href=""><div class="icon"><i class="fa-brands fs-5  fa-youtube"></i></div></a>
+              <a target="_blank" href=""><div class="icon"><i class="fa-brands fs-5  fa-instagram"></i></i></div></a>
+              <a target="_blank" href="https://t.me/karantinjurnal"><div class="icon"><i class="fa-brands fs-5 fa-telegram"></i></div></a>
+            </div>
+          </div>
+        </div>
+        <div class="row d-xl-flex d-none w-1 d-xl-flex d-none  justify-content-end">
+          <div class="col-8 d-flex justify-content-between">
+
+            <a class="text-decoration-none active-1 " href="{% url 'asosiy' %}">Bosh sahifa</a>
+            <a class="text-decoration-none text-white " href="{% url 'jurnallar' %}">Jurnallar</a>
+            <a class="text-decoration-none text-white " href="{% url 'yangiliklar' %}">Yangiliklar</a>
+            <a class="text-decoration-none text-white " href="{% url 'taxririyat_list' %}">Taxririyat </a>
+            <a class="text-decoration-none text-white " href="{% url 'talablar_list' %}">Talablar</a>
+
           </div>
         </div>
         <a class="navbar-brand " href="#"></a>
-        <button class="navbar-toggler bg-white d-xl-none d-flex " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <button class="navbar-toggler bg-white d-xl-none d-flex " type="button"
+                data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="offcanvas offcanvas-end bg-img1" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas offcanvas-end bg-img" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title text-light" id="offcanvasNavbarLabel">Elektron <br> jurnal</h5>
             <button type="button" class="btn-close bg-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -41,13 +121,22 @@
           <div class="offcanvas-body d-flex flex-column justify-content-between">
             <div class="card1-">
               <div class="row justify-content-center gap-4">
-                <div class="col-5"><a class="text-decoration-none text-light " href="{% url 'asosiy' %}">Bosh sahifa</a></div>
-                <div class="col-5"><a class="text-decoration-none text-secondary " href="{% url 'jurnallar' %}">Jurnallar</a></div>
-                <div class="col-5"><a class="text-decoration-none text-secondary " href="{% url 'yangiliklar' %}">Yangililar</a></div>
+
+                <div class="col-5"><a class="text-decoration-none active-1 " href="{% url 'asosiy' %}">Bosh sahifa</a>
+                </div>
+                <div class="col-5"><a class="text-decoration-none text-white " href="{% url 'jurnallar' %}">Jurnallar</a>
+                </div>
+                <div class="col-5"><a class="text-decoration-none text-white " href="{% url 'yangiliklar' %}">Yangiliklar</a>
+                </div>
+                <div class="col-5"><a class="text-decoration-none text-white " href="{% url 'taxririyat_list' %}">Taxririyat </a>
+                </div>
+                <div class="col-5"><a class="text-decoration-none text-white " href="{% url 'talablar_list' %}">Talablar</a>
+                </div>
+
               </div>
               <form class="d-flex mt-5" role="search" method="get" action="{% url 'search' %}">
-                <input class="form-control me-2" type="search" name="q" placeholder="Jurnal qidirish" aria-label="Search">
-                <button class="btn bg-black text-light" type="submit">Qidirish</button> 
+                <input class="form-control me-2" type="search"  name="q" placeholder="Jurnal qidirish" aria-label="Search">
+                <button class="btn bg-black text-light" type="submit">Qidirish</button>
               </form>
             </div>
             <div class="card-2">
@@ -73,6 +162,11 @@
                       <i class="fa-brands fs-3 text-black fa-facebook"></i>
                     </div>
                   </a>
+                  <a  class="text-decoration-none d-xl-none d-md-none d-flex"  href="">
+                    <div class="card1 d-flex justify-content-center align-items-center">
+                      <i class="fa-regular fa-eye text-black fs-5"></i>
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
@@ -80,41 +174,98 @@
         </div>
       </div>
         </nav>
-<!--      </header>-->
+
+      </header>
+
+  <!-- navbar end -->
+  <!-- malumotlar -->
+  <div class="malumotlar">
     <div class="container">
-      <div class="row justify-content-center pt-5">
-        <div class="col-xl-8 col-12 mt-5">
-          <div class="card2 w-100 bor font">
-            <p class="text-secondary mt-4">
-              <span><i class="fa-solid text-secondary fa-newspaper"></i>
-              </span>
-              {{jurnal_detel.chopetilishVaqti|date:'Y-m-d'}}
+      <div class="row justify-content-center">
+        <div class="col-xl-12  col-md-11 d-xl-flex d-none align-items-center justify-content-center animation">
+          <div class="imgcard align-items-center justify-content-center d-flex">
+            <img class="img-fluid imgs" src="{{jurnal_detel.rasm}}" alt="">
+
+          </div>
+          <div class="textcard">
+            <h4>{{jurnal_detel.nomi}}</h4>
+            <p>{{jurnal_detel.Text|truncatewords:90}}</p>
+<!--            <p class="sana"><span class="text-secondary">Sana :</span><br><span class="text-black">12</span>.<span>08</span>.<span>2023</span></p>-->
+            <p class="sana"><span class="text-secondary">Sana :</span>
+              <span class="text-black">{{jurnal_detel.yaratilganVaqti|date:'Y-m-d'}}</span>
             </p>
-            <h2 class="font-fammily text-center">
-              {{jurnal_detel.nomi}}
-            </h2>
-          </div>
-          <div class="img d-flex justify-content-center w-100  h80 padding-1">
-            <img class="img-fluid " src="{{jurnal_detel.rasm.url}}" alt="">
-          </div>
-          <p class="mt-3 fs-5 padding-1 font-fammily-1">
-           {{jurnal_detel.Text}}
-          </p>
-          <div class="row justify-content-center mt-4">
-            <div class="col-xl-6 col-md-9 col-11 d-flex justify-content-evenly ">
-              <a class="text-decoration-none" href="{{jurnal_detel.fayl.url}}">
-                <div class="button-1 d-flex gap-2 justify-content-center align-items-center">
-                <span><i class="fa-solid fa-download"></i></span>
-                Yuklab olish
+            <div class="korganlar d-flex gap-4">
+              <div class="box d-flex align-items-center gap-3">
+                <div class="card5"><i class="fa-solid fa-book-open fs-5"></i></div>
+                <div class="card5">
+                <div class="card5 text-secondary">Yuklab olganlar soni</div>
+                <div class="card5 fontW">{{jurnal_detel.yuklashlarSoni}}</div>
                 </div>
-              </a>
+              </div>
+              <div class="box d-flex align-items-center gap-3">
+                <div class="card5"><i class="fa-solid fa-location-pin fs-5"></i></div>
+                <div class="card5">
+                <div class="card5 text-secondary">Korganlar soni</div>
+                <div class="card5 fontW">{{jurnal_detel.korishlarSoni}}</div>
+                </div>
+              </div>
+            </div>
+            <p class="kategoriya"><span class="text-secondary">Kategoriya : </span> <br> <span>{{jurnal_detel.kategory}}</span></p>
+            <div class="box mt-0">
+              <div class="card2 mt-0"><p class="text-secondary sana">Ulanish uchun : </p></div>
+              <div class="icons mt-0 d-flex gap-3">
+               <a href=""> <div class="icon"><i class="fa-brands text-primary fs-4 fa-telegram"></i></div></a>
+                <a href=""><div class="icon"><i class="fa-brands text-primary fs-4 fa-facebook"></i></div></a>
+              </div>
+            </div>
+            <div class="yuklash w-100 d-flex justify-content-end">
+              <div class="text">
+                <button type="button" class="btn btn-success">
+                   <a style="text-decoration: none;" href="{{jurnal_detel.fayl.url}}"><i class="fa-solid fa-download"></i>
+                    Faylni yuklash
+                   </a>
+                  </button>
+              </div>
             </div>
           </div>
-          <br>
         </div>
-      </div> 
+        <div class="col-md-12 col-11  d-xl-none d-flex flex-column align-items-center">
+          <div class="imgcard align-items-center justify-content-center d-flex">
+            <img class="img-fluid imgs" src="../imgs/jurnal_u8P9LdS.jpeg" alt="">
+          </div>
+          <div class="textcard">
+            <h4 class="">{{jurnal_detel.nomi}}</h4>
+            <p class="sana">
+              <span class="text-secondary">Sana: {{jurnal_detel.yaratilganVaqti|date:'Y-m-d'}}</span>
+
+
+            </p>
+            <p class="kategoriya"><span class="text-secondary">Kategoriya : </span> <br> <span>{{jurnal_detel.kategory}}</span></p>
+            <div class="box">
+              <div class="card2"><p class="text-secondary sana">Ulanish uchun : </p></div>
+              <div class="icons d-flex gap-5">
+               <a href=""> <div class="icon"><i class="fa-brands text-primary fs-4 fa-telegram"></i></div></a>
+                <a href=""><div class="icon"><i class="fa-brands text-primary fs-4 fa-facebook"></i></div></a>
+              </div>
+            </div>
+            <div class="yuklash w-100 d-flex justify-content-end">
+             <div class="text">
+                <button type="button" class="btn btn-success">
+                   <a style="text-decoration: none;" href="{{jurnal_detel.fayl.url}}"><i class="fa-solid fa-download"></i>
+                    Faylni yuklash
+                   </a>
+                  </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
     </div>
-  
+  </div>
+  <!-- malummotlar end -->
+
+  <!-- futter -->
     <div class="futter bg-dark mt-5">
       <div class="container">
         <div class="row justify-content-center mt-1">
@@ -150,8 +301,10 @@
         </div>
       </div>
     </div>
-  </div>
+  <!-- futter end -->
 </body>
+
 <script src="{% static 'javascript/bootstrap.bundle.min.js' %}"></script>
 <script src="{% static 'javascript/main.js' %}"></script>
+
 </html>

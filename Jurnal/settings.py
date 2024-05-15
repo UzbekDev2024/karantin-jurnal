@@ -122,13 +122,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = ('/home/supermap/karantin-jurnali.uz/django/staticfiles',)
-STATIC_ROOT = '/home/supermap/karantin-jurnali.uz/django/static'
-MEDIA_URL = 'media/'
-MEDIA_ROOT = '/home/supermap/karantin-jurnali.uz/django/media'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
+
+# STATIC_URL = 'static/'
+# STATICFILES_DIRS = ('/home/supermap/karantin-jurnali.uz/django/staticfiles',)
+# STATIC_ROOT = '/home/supermap/karantin-jurnali.uz/django/static'
+# MEDIA_URL = 'media/'
+# MEDIA_ROOT = '/home/supermap/karantin-jurnali.uz/django/media'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

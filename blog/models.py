@@ -19,6 +19,8 @@ class Jurnallar(models.Model):
     Text = models.TextField()
     rasm = models.ImageField(upload_to='news/images')
     fayl = models.FileField(upload_to='news/fayllar')
+    korishlarSoni = models.IntegerField(default=1)
+    yuklashlarSoni = models.IntegerField(default=1)
     chopetilishVaqti = models.DateTimeField(default=timezone.now)
     yaratilganVaqti = models.DateTimeField(auto_now_add=True)
     ozgarishVaqti = models.DateTimeField(auto_now=True)
@@ -51,6 +53,22 @@ class Yangiliklar(models.Model):
         ordering = ['-chopetilishVaqti']
 
     objects = models.Manager()
+
+    def __str__(self):
+        return self.nomi
+
+
+class Tahririyat(models.Model):
+    birinchiUstun = models.CharField(max_length=400)
+    ikkinchiUstun = models.CharField(max_length=400)
+    uchinchiUstun = models.CharField(max_length=400)
+
+    def __str__(self):
+        return self.birinchiUstun
+
+class Talablar(models.Model):
+    nomi = models.CharField(max_length=300)
+    asosiyQism = models.TextField()
 
     def __str__(self):
         return self.nomi
